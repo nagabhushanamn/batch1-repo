@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                echo 'checkout..'
+                git branch: 'master',
+                    url: 'https://github.com/nagabhushanamn/batch1-repo'
             }
         }
         stage('install dependencies') {
