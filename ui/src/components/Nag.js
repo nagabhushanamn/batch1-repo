@@ -7,7 +7,7 @@ const Nag = () => {
         <div>
             <pre>
                 Name        : Nagabhushnam N,
-                Tech        : java,javascript
+                Tech        : java,javascript,
                 Profession  : trainer,
                 Address     : chennai
            </pre>
