@@ -10,12 +10,16 @@ pipeline {
         }
         stage('install dependencies') {
             steps {
-                echo 'install dependencies..'
+                dir("ui"){
+                    sh 'npm i'
+                }
             }
         }
         stage('building') {
             steps {
-                echo 'building....'
+                dir("ui"){
+                    sh 'npm run build'
+                }
             }
         }
         stage('test') {
@@ -25,7 +29,8 @@ pipeline {
         }
          stage('deploy') {
             steps {
-                echo 'deploying....'
+                dir("ui"){
+                }
             }
         }
     }
