@@ -1,13 +1,16 @@
 pipeline {
+    
     agent any
 
     stages {
-        stage('checkout') {
+
+        stage('git-checkout') {
             steps {
                 git branch: 'master',
                     url: 'https://github.com/nagabhushanamn/batch1-repo'
             }
         }
+
         stage('install dependencies') {
             steps {
                 dir("ui"){
@@ -15,6 +18,13 @@ pipeline {
                 }
             }
         }
+
+        stage('test') {
+            steps {
+                echo 'testing....'
+            }
+        }
+
         stage('building') {
             steps {
                 dir("ui"){
@@ -22,16 +32,15 @@ pipeline {
                 }
             }
         }
-        stage('test') {
-            steps {
-                echo 'testing....'
-            }
-        }
-         stage('deploy') {
+       
+        stage('deploy') {
             steps {
                 dir("ui"){
+                    input('deploy?')
+                    sh 'scp -r build/ root@165.22.217.249:/var/'
                 }
             }
         }
+
     }
 }
