@@ -21,7 +21,9 @@ pipeline {
 
         stage('test') {
             steps {
-                 sh 'npm run test'
+                  dir("ui"){
+                    sh 'npm run test'
+                }
             }
         }
 
