@@ -6,7 +6,7 @@ const Nag = () => {
     return (
         <div>
             <pre>
-                Name        : Nag,
+                Name        : Nagabhushnam,
                 Profession  : trainer,
                 Address     : chennai
            </pre>
