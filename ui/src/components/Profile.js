@@ -3,7 +3,7 @@ import React from 'react';
 const Profile = ({user}) => {
     return (
         <div>
-            {user.name}
+            <div className="title">{user.name}</div>
         </div>
     );
 };
