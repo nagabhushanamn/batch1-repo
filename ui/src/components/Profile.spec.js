@@ -15,7 +15,7 @@ describe('Profile component tests', () => {
             mobile: 1234567890
         }
         const wrapper = shallow(<Profile user={user} />)
-        const title = wrapper.find('.title').get(0).text()
+        const title = wrapper.find('.title').text()
         expect(title).toBe(user.name)
     })
 
